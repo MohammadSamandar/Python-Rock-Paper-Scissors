@@ -17,15 +17,12 @@ def load_users():
         
 
    
-    
 
 
 def save_users(users_data):
 
     with open('users.json', 'w') as f:
         json.dump(users_data, f, indent=4)
-
-
 
 
 
@@ -52,9 +49,6 @@ def register(user_data):
 
 
 
-
-
-
 def login(users_data):
     
 
@@ -75,16 +69,6 @@ def login(users_data):
 
 
    
-        
-
-
-
-        
-
-
-
-
-
 
 def get_user_choice():
 
@@ -174,7 +158,7 @@ def main():
 
         elif choice == '2':
             all_user_data = register(all_user_data)
-
+            save_users(all_user_data)
         elif choice== '3':
             print("GoodBye!")
             return
@@ -185,6 +169,7 @@ def main():
 
     while True:
         play_one_round(current_user)
+        save_users(all_user_data)
 
 
         while True:
